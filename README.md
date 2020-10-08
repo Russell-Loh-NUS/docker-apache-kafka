@@ -31,10 +31,10 @@ Note: You can run in detached mode using `docker-compose up -d` however, it is n
 9.	Type anything into the producer window and hit `Enter`. You should see the same entry being output on the consumer side.
 
 ## Testing election of new controller:
-1.	Start the Kafka servers as instructed above under `Instructions to start Kafka Servers + ZooKeeper Ensemble`.
+1.	Start the Kafka servers as instructed above under `Starting Kafka Servers + ZooKeeper Ensemble`.
 
 2.	Open a new Command Prompt/Terminal window and type `kafkacat -L -b [HOST_IP]:29092,[HOST_IP]:29093,[HOST_IP]:29094` to view the metadata for our brokers and topics. Take note of the controller’s port number e.g 29093.
-*Replace `[HOST_IP]` with the ip you defined in the `.env` file from step 3 of `Instructions to start Kafka Servers + ZooKeeper Ensemble`.
+*Replace `[HOST_IP]` with the ip you defined in the `.env` file from step 3 of `Starting Kafka Servers + ZooKeeper Ensemble`.
 
 3.	Type `docker ps` and find the corresponding container ID with the port number e.g 0.0.0.0:29093->9092/tcp.
 
@@ -43,13 +43,13 @@ Note: You can run in detached mode using `docker-compose up -d` however, it is n
 5.	Verify the container has been stopped by typing `docker ps`.
 
 6.	Verify that a new controller has been elected by typing `kafkacat -L -b [HOST_IP]:29092,[HOST_IP]:29093,[HOST_IP]:29094`.
-*Replace `[HOST_IP]` with the ip you defined in the `.env` file from step 3 of `Instructions to start Kafka Servers + ZooKeeper Ensemble`.
+*Replace `[HOST_IP]` with the ip you defined in the `.env` file from step 3 of `Starting Kafka Servers + ZooKeeper Ensemble`.
 
 ## Testing election of new leader for topic:
-1.	Start the Kafka servers as instructed above under `Instructions to start Kafka Servers + ZooKeeper Ensemble`.
+1.	Start the Kafka servers as instructed above under `Starting Kafka Servers + ZooKeeper Ensemble`.
 
 2.	Open a new Command Prompt/Terminal window and type `kafkacat -L -b [HOST_IP]:29092,[HOST_IP]:29093,[HOST_IP]:29094` and find the leader of the topic by referencing the broker id of ’leader’ under `MyTopic`. Take note of the port number e.g 29094.
-*Replace `[HOST_IP]` with the ip you defined in the `.env` file from step 3 of `Instructions to start Kafka Servers + ZooKeeper Ensemble`.
+*Replace `[HOST_IP]` with the ip you defined in the `.env` file from step 3 of `Starting Kafka Servers + ZooKeeper Ensemble`.
 
 3.	Type `docker ps` and find the corresponding container ID with the port number e.g 0.0.0.0:29094->9092/tcp.
 
@@ -58,7 +58,7 @@ Note: You can run in detached mode using `docker-compose up -d` however, it is n
 5.	Verify the container has been stopped by typing `docker ps`.
 
 6.	Verify that a new leader has been elected by typing `kafkacat -L -b [HOST_IP]:29092,[HOST_IP]:29093,[HOST_IP]:29094`.
-*Replace `[HOST_IP]` with the ip you defined in the `.env` file from step 3 of `Instructions to start Kafka Servers + ZooKeeper Ensemble`.
+*Replace `[HOST_IP]` with the ip you defined in the `.env` file from step 3 of `Starting Kafka Servers + ZooKeeper Ensemble`.
 
 7.	Start typing on the producer window, you should still be able to receive messages on the consumer side.
 
