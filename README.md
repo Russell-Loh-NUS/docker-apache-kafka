@@ -4,7 +4,7 @@
 1.	[Docker Desktop/Machine](https://www.docker.com/products/docker-desktop) installed and started
 2.	[Kafkacat](https://github.com/edenhill/kafkacat) installed
 
-Important note about using docker version of kafkacat: 
+### Important note about using docker version of kafkacat: 
 If you are using the Docker version of kafkacat, please use the command `docker run -it --network=host edenhill/kafkacat:1.6.0` instead of `kafkacat` for the instructions below.
 
 # Instructions
