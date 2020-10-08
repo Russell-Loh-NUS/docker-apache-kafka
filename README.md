@@ -1,7 +1,7 @@
 # docker-apache-kafka
 
 # Pre-requisites:
-1.	[Docker Desktop](https://www.docker.com/products/docker-desktop) installed and started
+1.	[Docker Desktop/Machine](https://www.docker.com/products/docker-desktop) installed and started
 2.	[Kafkacat](https://github.com/edenhill/kafkacat) installed
 
 Important note about using docker version of kafkacat: 
